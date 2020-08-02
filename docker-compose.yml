@@ -1,0 +1,31 @@
+version: '3.6'
+services:
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: s9d8as06
+  db_pma:
+    image: phpmyadmin/phpmyadmin:latest
+    depends_on:
+    - db
+    ports:
+    - 8082:80
+    environment:
+      MYSQL_ROOT_PASSWORD: s9d8as06
+      PMA_USER: root
+      PMA_PASSWORD: s9d8as06
+  www:
+    depends_on:
+    - db
+    image: wordpress:latest
+    volumes:
+    - ".:/var/www/html/wp-content/plugins/wordpress-opensim-bridge"
+    ports:
+    - 80:80
+    - 443:443
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: s9d8as06
+      WORDPRESS_DEBUG: 1

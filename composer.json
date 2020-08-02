@@ -1,0 +1,12 @@
+{
+    "name": "soup-bowl/wposbridge",
+	"description": "Bridges the user management from WordPress into OpenSimulator.",
+    "autoload": {
+        "classmap": [
+			"class-profile.php"
+		]
+    },
+    "require": {
+        "phpxmlrpc/phpxmlrpc": "^4.4"
+    }
+}
