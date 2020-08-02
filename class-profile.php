@@ -39,14 +39,13 @@ class Profile {
 			<tr>
 				<th><label for="opensimFirstname"><?php esc_html_e( 'Avatar First Name', 'wposbridge' ); ?></label></th>
 				<td>
-					<input type="text" name="opensimFirstname" id="opensimFirstname" value="<?php echo esc_attr( get_the_author_meta( 'opensimFirstname', $user->ID ) ); ?>" class="regular-text" /><br />
-					<span class="description"><?php esc_html_e( 'Once set, your name cannot be changed.', 'wposbridge' ); ?></span>
+					<input type="text" name="opensimFirstname" id="opensimFirstname" value="<?php echo esc_attr( get_the_author_meta( 'opensimFirstname', $user->ID ) ); ?>" class="regular-text" />
 				</td>
 			</tr>
 			<tr>
 				<th><label for="opensimLastname"><?php esc_html_e( 'Avatar Last Name', 'wposbridge' ); ?></label></th>
 				<td>
-					<input type="text" name="opensimLastname" id="opensimLastname" value="<?php echo esc_attr( get_the_author_meta( 'opensimLastname', $user->ID ) ); ?>" class="regular-text" /><br />
+					<input type="text" name="opensimLastname" id="opensimLastname" value="<?php echo esc_attr( get_the_author_meta( 'opensimLastname', $user->ID ) ); ?>" class="regular-text" />
 				</td>
 			</tr>
 		</table>
