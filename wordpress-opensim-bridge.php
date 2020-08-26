@@ -20,7 +20,7 @@
 add_action(
 	'admin_init',
 	function() {
-		$opts = [ 'wposbridge_address', 'wposbridge_port', 'wposbridge_secret' ];
+		$opts = [ 'wposbridge_address', 'wposbridge_secret' ];
 
 		foreach ( $opts as $opt ) {
 			register_setting( 'options', $opt );
@@ -38,5 +38,7 @@ add_action(
 require_once __DIR__ . '/vendor/autoload.php';
 
 use wposbridge\Profile;
+use wposbridge\Opensim;
 
 ( new Profile() )->hooks();
+( new Opensim() )->hooks();

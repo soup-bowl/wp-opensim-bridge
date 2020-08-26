@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa266d941cd480cb7c7edd6d5b061471",
+    "content-hash": "9b02cc08d706a39662f686b4ffb0ebe9",
     "packages": [
         {
             "name": "phpxmlrpc/phpxmlrpc",

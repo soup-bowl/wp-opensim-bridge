@@ -3,7 +3,8 @@
 	"description": "Bridges the user management from WordPress into OpenSimulator.",
     "autoload": {
         "classmap": [
-			"class-profile.php"
+            "class-profile.php",
+            "class-opensim.php"
 		]
     },
     "require": {
