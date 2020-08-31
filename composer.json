@@ -4,7 +4,8 @@
     "autoload": {
         "classmap": [
             "class-profile.php",
-            "class-opensim.php"
+            "class-opensim.php",
+            "class-xmlrpc.php"
 		]
     },
     "require": {
