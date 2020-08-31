@@ -39,6 +39,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use wposbridge\Profile;
 use wposbridge\Opensim;
+use wposbridge\Settings;
 
 ( new Profile() )->hooks();
 ( new Opensim() )->hooks();
+( new Settings() )->hooks();
