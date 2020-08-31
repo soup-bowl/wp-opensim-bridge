@@ -57,6 +57,7 @@ class Opensim {
 	 * @return void
 	 */
 	public function update( $wp_user_id ) {
+		$avatar_guid = get_user_meta( $wp_user_id, 'opensim_avatar_uuid', true );
 		if ( isset( $_REQUEST['opensimFirstname'], $_REQUEST['opensimLastname'] ) ) {
 			$params = array(
 				'user_firstname' => sanitize_text_field( wp_unslash( $_REQUEST['opensimFirstname'] ) ),
@@ -66,14 +67,41 @@ class Opensim {
 			$request = new Request( 'admin_exists_user', $this->xmlrpc_param( $params ) );
 			$client  = new Client( $this->address );
 			$resp1   = $client->send( $request );
+			$err     = '[OpenSim Bridge] ';
 
 			if ( ! $resp1->faultCode() && $resp1->value()['success']->scalarval() ) {
+				// The linked OpenSim user exists.
 				if ( isset( $_REQUEST['pass1'], $_REQUEST['pass2'] ) ) {
 					$params['user_password'] = sanitize_text_field( wp_unslash( $_REQUEST['pass1'] ) );
 
 					$request = new Request( 'admin_update_user', $this->xmlrpc_param( $params ) );
 					$resp2   = $client->send( $request );
+
+					if ( ! $resp2->faultCode() && false === $resp2->value()['success']->scalarval() ) {
+						$error = "{$err} A fault occurred when updating user information: " . $resp2->value()['error']->scalarval();
+						error_log( $error );
+					}
 				}
+			} elseif ( empty( $avatar_guid ) && ! $resp1->faultCode() && false === $resp1->value()['success']->scalarval() ) {
+				// No OpenSim user was found.
+				if ( isset( $_REQUEST['email'], $_REQUEST['pass1'], $_REQUEST['pass2'] ) ) { // OpenSim fields already checked.
+					$params['user_email']     = sanitize_email( wp_unslash( $_REQUEST['email'] ) );
+					$params['user_password']  = sanitize_text_field( wp_unslash( $_REQUEST['pass1'] ) );
+					$params['start_region_x'] = 1000;
+					$params['start_region_y'] = 1000;
+
+					$request = new Request( 'admin_create_user', $this->xmlrpc_param( $params ) );
+					$resp2   = $client->send( $request );
+
+					if ( ! $resp2->faultCode() && false === $resp2->value()['success']->scalarval() ) {
+						$error = "{$err} A fault occurred when updating user information: " . $resp2->value()['error']->scalarval();
+						error_log( $error );
+					} else {
+						add_user_meta( $wp_user_id, 'opensim_avatar_uuid', $resp2->value()['avatar_uuid']->scalarval() );
+					}
+				}
+			} else {
+				error_log( "{$err} An unexpected response was recieved from the XMLRPC source." );
 			}
 		}
 	}
