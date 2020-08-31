@@ -17,21 +17,6 @@
  * Text Domain:       wposbridge
  */
 
-add_action(
-	'admin_init',
-	function() {
-		$opts = [ 'wposbridge_address', 'wposbridge_secret' ];
-
-		foreach ( $opts as $opt ) {
-			register_setting( 'options', $opt );
-
-			if ( false === get_option( $opt ) ) {
-				add_option( $opt, '' );
-			}
-		}
-	}
-);
-
 /**
  * Grab dependencies.
  */

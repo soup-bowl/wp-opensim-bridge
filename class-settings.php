@@ -40,7 +40,7 @@ class Settings {
 	public function page_contents() {
 		?>
 		<form action='options.php' method='post'>
-			<h2><?php _e( 'OpenSimulator Bridge Settings', 'wposbridge' ); ?></h2>
+			<h2><?php esc_html_e( 'OpenSimulator Bridge Settings', 'wposbridge' ); ?></h2>
 			<?php
 			settings_fields( 'wpos' );
 			do_settings_sections( 'wpos' );
@@ -54,7 +54,16 @@ class Settings {
 	 * Renders the settings fields within our settings segment.
 	 */
 	public function settings() {
-		register_setting( 'wpos', 'wpos' );
+		register_setting(
+			'wpos',
+			'wpos',
+			array(
+				'default' => array(
+					'address' => '',
+					'secret'  => '',
+				),
+			)
+		);
 
 		add_settings_section(
 			'wpos_xmlrpc',

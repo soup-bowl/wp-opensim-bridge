@@ -52,7 +52,7 @@ class Xmlrpc {
 	 * @return self
 	 */
 	public function set_parameters( $array ) {
-		$array['password'] = get_option( 'wposbridge_secret' );
+		$array['password'] = get_option( 'wpos' )['secret'];
 
 		$new_arr = array();
 		foreach ( $array as $key => $val ) {
@@ -72,7 +72,7 @@ class Xmlrpc {
 	 */
 	public function send() {
 		$response    = array();
-		$client_addr = get_option( 'wposbridge_address' );
+		$client_addr = get_option( 'wpos' )['address'];
 		if ( ! isset( $client_addr, $this->command, $this->parameters ) ) {
 			throw new Exception( 'Required pre-setup not completed' );
 		}
