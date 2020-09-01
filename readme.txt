@@ -25,6 +25,17 @@ A new user will only be created when the password is regenerated, to allow for
 the API to set the user password.
 
 == Frequently Asked Questions ==
+= What OpenSimulator configuration is needed for this plugin? =
+The Remote Administration interface needs to be enabled, which is an XMLRPC
+feature that permits commands to be sent to the OpenSimulator grid. This is how
+we make changes to the grid.
+
+http://opensimulator.org/wiki/RemoteAdmin
+
+We strongly recommend setting a secret key, to avoid unwanted administration
+commands being sent to the grid. If you wish to restrict the enabled methods,
+the plugin description lists the required admin commands to be permitted.
+
 = How do I manually hook an account to a user? (advanced) =
 You can add the following to wp_usermeta table (or more preferably, via wp-cli's
 wp user meta control).
