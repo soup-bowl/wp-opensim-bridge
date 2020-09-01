@@ -21,6 +21,7 @@ class Profile {
 	public function hooks() {
 		add_action( 'show_user_profile', array( &$this, 'display_fields' ) );
 		add_action( 'edit_user_profile', array( &$this, 'display_fields' ) );
+		add_action( 'user_new_form', array( &$this, 'display_fields' ) );
 	}
 
 	/**
@@ -29,9 +30,13 @@ class Profile {
 	 * @param WP_User $user The requesting user object.
 	 * @return void Prints to page.
 	 */
-	public function display_fields( $user ) {
-		$os_firstname   = get_the_author_meta( 'opensimFirstname', $user->ID );
-		$os_lastname    = get_the_author_meta( 'opensimLastname', $user->ID );
+	public function display_fields( $user = null ) {
+		if ( is_string( $user ) && 'add-new-user' === $user ) {
+			$user = null;
+		}
+
+		$os_firstname   = ( isset( $user ) ) ? get_the_author_meta( 'opensimFirstname', $user->ID ) : null;
+		$os_lastname    = ( isset( $user ) ) ? get_the_author_meta( 'opensimLastname', $user->ID ) : null;
 		$lastnames      = get_option( 'wpos' )['allowedlastnames'];
 		$allowed_lnames = ( ! empty( $lastnames ) ) ? explode( ',', $lastnames ) : null;
 		$field_disable  = ( ! empty( $os_firstname ) && ! empty( $os_lastname ) ) ? 'disabled' : '';

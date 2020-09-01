@@ -45,7 +45,8 @@ class Opensim {
 	 */
 	public function hooks() {
 		add_action( 'personal_options_update', array( &$this, 'update' ) );
-		add_action( 'edit_user_profile_update', array( &$this, 'update' ) );
+		add_action( 'profile_update', array( &$this, 'update' ) );
+		add_action( 'user_register', array( &$this, 'update' ) );
 	}
 
 	/**
