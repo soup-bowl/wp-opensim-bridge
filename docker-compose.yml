@@ -30,7 +30,7 @@ services:
     - db
     image: wordpress:latest
     volumes:
-    - ".:/var/www/html/wp-content/plugins/wordpress-opensim-bridge"
+    - ".:/var/www/html/wp-content/plugins/opensimulator-bridge"
     ports:
     - 80:80
     - 443:443

@@ -1,4 +1,4 @@
-=== WordPress OpenSim Bridge ===
+=== OpenSimulator Bridge ===
 Contributors: soupbowl
 Tags: opensim
 Requires at least: 5.0
@@ -7,16 +7,16 @@ Requires PHP: 7.0
 Stable tag: trunk
 License: MIT
 
-Manage OpenSim grid users via the WordPress user management system.
+Manage OpenSimulator grid users via the WordPress user management system.
 
 == Description ==
 **This plugin is in early days, so you may experience bugs. Please bear with us
 and report any bugs you come across**
 
 Manage an individual grid through your WordPress system by making use of the
-XMLRPC interface baked into OpenSim. Once hooked up, this plugin will link up
-your WordPress users with their OpenSim counterparts, providing a simple user
-management interface.
+XMLRPC interface baked into OpenSimulator. Once hooked up, this plugin will link
+up your WordPress users with their OpenSimulator counterparts, providing a
+simple user management interface.
 
 This has been tested with OpenSimulator configured to Standalone mode. This users
 and requires the following admin commands:
@@ -57,6 +57,9 @@ faults, contribute code or even fork your own version of the plugin.
 https://github.com/soup-bowl/wordpress-opensim-bridge
 
 == Changelog ==
+= 0.1.1 =
+* Plugin name change to adhere with WordPress directory guidelines.
+
 = 0.1 =
 * Create new OpenSimulator accounts via WordPress admin.
 * Update password of OpenSimulator account with the generated password.
