@@ -24,6 +24,18 @@ and requires the following admin commands:
 A new user will only be created when the password is regenerated, to allow for
 the API to set the user password.
 
+== Frequently Asked Questions ==
+= How do I manually hook an account to a user? (advanced) =
+You can add the following to wp_usermeta table (or more preferably, via wp-cli's
+wp user meta control).
+
+* 'opensim_avatar_uuid' (PrincipalID in UserAccounts table).
+* 'opensimFirstname' (FirstName in UserAccounts table).
+* 'opensimLastname' (LastName in UserAccounts table).
+
+The OpenSimulator xmlrpc operates predominantly on first and last name, so it's
+important that this matches exactly what the configuration is in OpenSimulator.
+
 == Changelog ==
 = 0.1 =
 * Create new OpenSimulator accounts via WordPress admin.
