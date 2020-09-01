@@ -59,8 +59,9 @@ class Settings {
 			'wpos',
 			array(
 				'default' => array(
-					'address' => '',
-					'secret'  => '',
+					'address'          => '',
+					'secret'           => '',
+					'allowedlastnames' => '',
 				),
 			)
 		);
@@ -96,6 +97,21 @@ class Settings {
 				$val = ( ! empty( $opt['secret'] ) ) ? $opt['secret'] : '';
 				?>
 				<input type='password' class='regular-text ltr' name='wpos[secret]' value='<?php echo esc_attr( $val ); ?>'>
+				<?php
+			},
+			'wpos',
+			'wpos_xmlrpc'
+		);
+
+		add_settings_field(
+			'wpos_xmlrpc_allowednames',
+			__( 'Allowed Last Names', 'wposbridge' ),
+			function() {
+				$opt = get_option( 'wpos' );
+				$val = ( ! empty( $opt['allowedlastnames'] ) ) ? $opt['allowedlastnames'] : '';
+				?>
+				<input type='text' class='regular-text ltr' name='wpos[allowedlastnames]' value='<?php echo esc_attr( $val ); ?>'>
+				<p class='description'><?php echo esc_html_e( 'Separate with commas. Leave blank to let the user decide.', 'wposbridge' ); ?></p>
 				<?php
 			},
 			'wpos',
