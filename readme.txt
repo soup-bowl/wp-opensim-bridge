@@ -10,6 +10,9 @@ License: MIT
 Manage OpenSim grid users via the WordPress user management system.
 
 == Description ==
+**This plugin is in early days, so you may experience bugs. Please bear with us
+and report any bugs you come across**
+
 Manage an individual grid through your WordPress system by making use of the
 XMLRPC interface baked into OpenSim. Once hooked up, this plugin will link up
 your WordPress users with their OpenSim counterparts, providing a simple user
