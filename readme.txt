@@ -26,4 +26,6 @@ the API to set the user password.
 
 == Changelog ==
 = 0.1 =
-* Update password of linked OpenSim avatar.
+* Create new OpenSimulator accounts via WordPress admin.
+* Update password of OpenSimulator account with the generated password.
+* Set a restricted last name selection.
