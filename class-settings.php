@@ -26,8 +26,8 @@ class Settings {
 	 */
 	public function page() {
 		add_options_page(
-			__( 'OpenSim Bridge Settings', 'wposbridge' ),
-			__( 'OpenSim Bridge Settings', 'wposbridge' ),
+			__( 'OpenSimulator Bridge Settings', 'wposbridge' ),
+			__( 'OpenSimulator', 'wposbridge' ),
 			'manage_options',
 			'wpos_settings',
 			array( &$this, 'page_contents' )
