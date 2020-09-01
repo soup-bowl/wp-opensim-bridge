@@ -30,8 +30,8 @@ You can add the following to wp_usermeta table (or more preferably, via wp-cli's
 wp user meta control).
 
 * 'opensim_avatar_uuid' (PrincipalID in UserAccounts table).
-* 'opensimFirstname' (FirstName in UserAccounts table).
-* 'opensimLastname' (LastName in UserAccounts table).
+* 'opensim_firstname' (FirstName in UserAccounts table).
+* 'opensim_lastname' (LastName in UserAccounts table).
 
 The OpenSimulator xmlrpc operates predominantly on first and last name, so it's
 important that this matches exactly what the configuration is in OpenSimulator.

@@ -35,33 +35,33 @@ class Profile {
 			$user = null;
 		}
 
-		$os_firstname   = ( isset( $user ) ) ? get_the_author_meta( 'opensimFirstname', $user->ID ) : null;
-		$os_lastname    = ( isset( $user ) ) ? get_the_author_meta( 'opensimLastname', $user->ID ) : null;
+		$os_firstname   = ( isset( $user ) ) ? get_the_author_meta( 'opensim_firstname', $user->ID ) : null;
+		$os_lastname    = ( isset( $user ) ) ? get_the_author_meta( 'opensim_lastname', $user->ID ) : null;
 		$lastnames      = get_option( 'wpos' )['allowedlastnames'];
 		$allowed_lnames = ( ! empty( $lastnames ) ) ? explode( ',', $lastnames ) : null;
 		$field_disable  = ( ! empty( $os_firstname ) && ! empty( $os_lastname ) ) ? 'disabled' : '';
 		?>
 		<h3><?php esc_html_e( 'OpenSimulator Details', 'wposbridge' ); ?></h3>
 		<p><?php esc_html_e( 'To create or change your OpenSimulator account, please generate a new password. This can be set to your current password.', 'wposbridge' ); ?></p>
-		<input type="hidden" name="opensimNonce" value="<?php echo esc_html( wp_create_nonce( 'wposb-user-verify' ) ); ?>" />
+		<input type="hidden" name="opensim_nonce" value="<?php echo esc_html( wp_create_nonce( 'wposb-user-verify' ) ); ?>" />
 		<table class="form-table">
 			<tr>
-				<th><label for="opensimFirstname"><?php esc_html_e( 'Avatar First Name', 'wposbridge' ); ?></label></th>
+				<th><label for="opensim_firstname"><?php esc_html_e( 'Avatar First Name', 'wposbridge' ); ?></label></th>
 				<td>
-					<input type="text" name="opensimFirstname" value="<?php echo esc_attr( $os_firstname ); ?>" class="regular-text" <?php echo esc_attr( $field_disable ); ?> />
+					<input type="text" name="opensim_firstname" value="<?php echo esc_attr( $os_firstname ); ?>" class="regular-text" <?php echo esc_attr( $field_disable ); ?> />
 				</td>
 			</tr>
 			<tr>
-				<th><label for="opensimLastname"><?php esc_html_e( 'Avatar Last Name', 'wposbridge' ); ?></label></th>
+				<th><label for="opensim_lastname"><?php esc_html_e( 'Avatar Last Name', 'wposbridge' ); ?></label></th>
 				<td>
 					<?php if ( ! empty( $allowed_lnames ) && empty( $os_lastname ) ) : ?>
-					<select name="opensimLastname" style="width:15em">
+					<select name="opensim_lastname" style="width:15em">
 						<?php foreach ( $allowed_lnames as $last_name ) : ?>
 							<option><?php echo esc_attr( trim( $last_name ) ); ?></option>
 						<?php endforeach; ?>
 					</select>
 					<?php else : ?>
-					<input type="text" name="opensimLastname" value="<?php echo esc_attr( $os_lastname ); ?>" class="regular-text" <?php echo esc_attr( $field_disable ); ?> />
+					<input type="text" name="opensim_lastname" value="<?php echo esc_attr( $os_lastname ); ?>" class="regular-text" <?php echo esc_attr( $field_disable ); ?> />
 					<?php endif; ?>
 					<p class='description'><?php esc_html_e( 'Once set, your OpenSimulator name cannot be changed.', 'wposbridge' ); ?></p>
 				</td>

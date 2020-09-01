@@ -61,15 +61,15 @@ class Opensim {
 			return false;
 		}
 
-		if ( isset( $_REQUEST['opensimNonce'] ) && wp_verify_nonce( sanitize_key( $_REQUEST['opensimNonce'] ), 'wposb-user-verify' ) ) {
+		if ( isset( $_REQUEST['opensim_nonce'] ) && wp_verify_nonce( sanitize_key( $_REQUEST['opensim_nonce'] ), 'wposb-user-verify' ) ) {
 			// Deal with the OpenSim XMLRPC admin interface.
 			if ( empty( $avatar_guid )
-			&& ! empty( $_REQUEST['opensimFirstname'] ) && ! empty( $_REQUEST['opensimLastname'] ) && ! empty( $_REQUEST['email'] )
+			&& ! empty( $_REQUEST['opensim_firstname'] ) && ! empty( $_REQUEST['opensim_lastname'] ) && ! empty( $_REQUEST['email'] )
 			&& ! empty( $_REQUEST['pass1'] ) && ! empty( $_REQUEST['pass2'] ) ) {
 				// Create a new OpenSim user.
 				$params = array(
-					'user_firstname' => sanitize_text_field( wp_unslash( $_REQUEST['opensimFirstname'] ) ),
-					'user_lastname'  => sanitize_text_field( wp_unslash( $_REQUEST['opensimLastname'] ) ),
+					'user_firstname' => sanitize_text_field( wp_unslash( $_REQUEST['opensim_firstname'] ) ),
+					'user_lastname'  => sanitize_text_field( wp_unslash( $_REQUEST['opensim_lastname'] ) ),
 					'user_email'     => sanitize_email( wp_unslash( $_REQUEST['email'] ) ),
 					'user_password'  => sanitize_text_field( wp_unslash( $_REQUEST['pass1'] ) ),
 					'start_region_x' => 1000,
@@ -90,15 +90,15 @@ class Opensim {
 					$error = '[OpenSim Bridge] A fault occurred when updating user information: ' . $resp_new->output['error']->scalarval();
 					error_log( $error );
 				} else {
-					add_user_meta( $wp_user_id, 'opensimFirstname', sanitize_text_field( wp_unslash( $_REQUEST['opensimFirstname'] ) ) );
-					add_user_meta( $wp_user_id, 'opensimLastname', sanitize_text_field( wp_unslash( $_REQUEST['opensimLastname'] ) ) );
+					add_user_meta( $wp_user_id, 'opensim_firstname', sanitize_text_field( wp_unslash( $_REQUEST['opensim_firstname'] ) ) );
+					add_user_meta( $wp_user_id, 'opensim_lastname', sanitize_text_field( wp_unslash( $_REQUEST['opensim_lastname'] ) ) );
 					add_user_meta( $wp_user_id, 'opensim_avatar_uuid', $resp_new->output['avatar_uuid']->scalarval() );
 				}
 			} elseif ( ! empty( $avatar_guid ) && ! empty( $_REQUEST['pass1'] ) && ! empty( $_REQUEST['pass2'] ) ) {
 				// Change OpenSim user password.
 				$params = array(
-					'user_firstname' => get_user_meta( $wp_user_id, 'opensimFirstname', true ),
-					'user_lastname'  => get_user_meta( $wp_user_id, 'opensimLastname', true ),
+					'user_firstname' => get_user_meta( $wp_user_id, 'opensim_firstname', true ),
+					'user_lastname'  => get_user_meta( $wp_user_id, 'opensim_lastname', true ),
 					'user_password'  => sanitize_text_field( wp_unslash( $_REQUEST['pass1'] ) ),
 				);
 
