@@ -63,7 +63,7 @@ class Profile {
 					<?php else : ?>
 					<input type="text" name="opensimLastname" value="<?php echo esc_attr( $os_lastname ); ?>" class="regular-text" <?php echo esc_attr( $field_disable ); ?> />
 					<?php endif; ?>
-					<p class='description'><?php esc_html_e( 'Once set, your OpenSim name cannot be changed.', 'wposbridge' ); ?></p>
+					<p class='description'><?php esc_html_e( 'Once set, your OpenSimulator name cannot be changed.', 'wposbridge' ); ?></p>
 				</td>
 			</tr>
 		</table>
