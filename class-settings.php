@@ -81,7 +81,7 @@ class Settings {
 				$opt = get_option( 'wpos' );
 				$val = ( ! empty( $opt['address'] ) ) ? $opt['address'] : '';
 				?>
-				<input type='text' class='regular-text ltr' name='wpos[address]' value='<?php echo esc_attr( $val ); ?>'>
+				<input type='url' class='regular-text ltr' name='wpos[address]' value='<?php echo esc_attr( $val ); ?>'>
 				<?php
 			},
 			'wpos',

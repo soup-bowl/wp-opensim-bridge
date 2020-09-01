@@ -78,7 +78,11 @@ class Opensim {
 				try {
 					$resp_new = ( new Xmlrpc() )->set_command( 'admin_create_user' )->set_parameters( $params )->send();
 				} catch ( Exception $e ) {
-					wp_die( '[OpenSim Bridge] An OpenSim Bridge error occurred: ' . $e->getMessage() );
+					if( current_user_can( 'administrator' ) ) {
+						wp_die( 'An OpenSimulator Bridge communication error has occurred: ' . $e->getMessage() );
+					} else {
+						wp_die( 'An OpenSimulator Bridge communication error has occurred. Please contact the system administrator. ' );
+					}
 				}
 
 				if ( ! $resp_new->success ) {
@@ -100,7 +104,11 @@ class Opensim {
 				try {
 					$resp_udt = ( new Xmlrpc() )->set_command( 'admin_update_user' )->set_parameters( $params )->send();
 				} catch ( Exception $e ) {
-					wp_die( '[OpenSim Bridge] An OpenSim Bridge error occurred: ' . $e->getMessage() );
+					if( current_user_can( 'administrator' ) ) {
+						wp_die( 'An OpenSimulator Bridge communication error has occurred: ' . $e->getMessage() );
+					} else {
+						wp_die( 'An OpenSimulator Bridge communication error has occurred. Please contact the system administrator. ' );
+					}
 				}
 
 				if ( ! $resp_udt->success ) {
