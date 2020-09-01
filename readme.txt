@@ -47,6 +47,12 @@ wp user meta control).
 The OpenSimulator xmlrpc operates predominantly on first and last name, so it's
 important that this matches exactly what the configuration is in OpenSimulator.
 
+= Source code =
+The project is currently developed on GitHub. Head on over to our repo to report
+faults, contribute code or even fork your own version of the plugin.
+
+https://github.com/soup-bowl/wordpress-opensim-bridge
+
 == Changelog ==
 = 0.1 =
 * Create new OpenSimulator accounts via WordPress admin.
