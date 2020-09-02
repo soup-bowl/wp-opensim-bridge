@@ -1,6 +1,6 @@
 === OpenSimulator Bridge ===
 Contributors: soupbowl
-Tags: opensim
+Tags: opensim,opensimulator,xmlrpc,second life,metaverse
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 7.0
@@ -11,7 +11,7 @@ Manage OpenSimulator grid users via the WordPress user management system.
 == Description ==
 **This plugin is in early days, so you may experience bugs. Please bear with us and report any bugs you come across**
 
-Manage an individual grid through your WordPress system by making use of the XMLRPC interface baked into OpenSimulator. Once hooked up, this plugin will link up your WordPress users with their OpenSimulator counterparts, providing a simple user management interface.
+Manage an individual [OpenSimulator](http://opensimulator.org) grid through your WordPress system by making use of the xmlrpc [Remote Admin](http://opensimulator.org/wiki/RemoteAdmin) interface. Once hooked up, this plugin will link up your WordPress users with their OpenSimulator counterparts, providing a simple user management interface.
 
 This has been tested with OpenSimulator configured to Standalone mode. This uses and requires the following admin commands:
 
