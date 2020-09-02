@@ -4,7 +4,7 @@ Tags: opensim
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: trunk
+Stable tag: 0.1.1
 License: MIT
 
 Manage OpenSimulator grid users via the WordPress user management system.
@@ -25,7 +25,7 @@ A new user will only be created when the password is regenerated, to allow for t
 = What OpenSimulator configuration is needed for this plugin? =
 The Remote Administration interface needs to be enabled, which is an XMLRPC feature that permits commands to be sent to the OpenSimulator grid. This is how we make changes to the grid.
 
-http://opensimulator.org/wiki/RemoteAdmin
+[RemoteAdmin - OpenSimulator Wiki](http://opensimulator.org/wiki/RemoteAdmin)
 
 We strongly recommend setting a secret key, to avoid unwanted administration commands being sent to the grid. If you wish to restrict the enabled methods, the plugin description lists the required admin commands to be permitted.
 
@@ -41,7 +41,7 @@ The OpenSimulator xmlrpc operates predominantly on first and last name, so it's 
 = Source code =
 The project is currently developed on GitHub. Head on over to our repo to report faults, contribute code or even fork your own version of the plugin.
 
-https://github.com/soup-bowl/wordpress-opensim-bridge
+[github.com/soup-bowl/wordpress-opensim-bridge](https://github.com/soup-bowl/wordpress-opensim-bridge)
 
 == Changelog ==
 = 0.1.1 =
