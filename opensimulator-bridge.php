@@ -15,7 +15,6 @@
  * Author URI:        https://www.soupbowl.io
  * License:           MIT
  * Text Domain:       wposbridge
- * GitHub Plugin URI: soup-bowl/wordpress-opensim-bridge
  */
 
 /**
