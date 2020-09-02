@@ -13,7 +13,7 @@ Manage OpenSimulator grid users via the WordPress user management system.
 
 Manage an individual grid through your WordPress system by making use of the XMLRPC interface baked into OpenSimulator. Once hooked up, this plugin will link up your WordPress users with their OpenSimulator counterparts, providing a simple user management interface.
 
-This has been tested with OpenSimulator configured to Standalone mode. This users and requires the following admin commands:
+This has been tested with OpenSimulator configured to Standalone mode. This uses and requires the following admin commands:
 
 * admin_create_user
 * admin_update_user
