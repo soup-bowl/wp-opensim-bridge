@@ -1,0 +1,6 @@
+/.docker
+/.git
+/.github
+.gitignore
+docker-compose.yml
+phpcs.xml.dist
