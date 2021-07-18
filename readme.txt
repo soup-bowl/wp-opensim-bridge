@@ -45,7 +45,7 @@ The project is currently developed on GitHub. Head on over to our repo to report
 
 == Changelog ==
 = 0.1.2 =
-* Updated dependencies, tested with WordPress 5.7.
+* Updated dependencies, tested with WordPress 5.8.
 
 = 0.1.1 =
 * Plugin name change to adhere with WordPress directory guidelines.
