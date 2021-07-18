@@ -11,5 +11,9 @@
     },
     "require": {
         "phpxmlrpc/phpxmlrpc": "^4.4"
-    }
+    },
+    "require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"wp-coding-standards/wpcs": "*"
+	}
 }
