@@ -4,7 +4,7 @@ Tags: opensim,opensimulator,xmlrpc,second life,metaverse
 Requires at least: 5.0
 Tested up to: 5.8
 Requires PHP: 7.0
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: MIT
 
 Manage OpenSimulator grid users via the WordPress user management system.
