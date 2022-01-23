@@ -2,9 +2,9 @@
 Contributors: soupbowl
 Tags: opensim,opensimulator,xmlrpc,second life,metaverse
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 7.0
-Stable tag: 0.1.3
+Stable tag: 0.1.3.1
 License: MIT
 
 Manage OpenSimulator grid users via the WordPress user management system.
@@ -44,7 +44,9 @@ The project is currently developed on GitHub. Head on over to our repo to report
 [github.com/soup-bowl/wordpress-opensim-bridge](https://github.com/soup-bowl/wordpress-opensim-bridge)
 
 == Changelog ==
-= 0.1.3 =
+= 0.1.3.1 =
+(Re-released as the developer stupidly didn't actually **change** the support field, just tested it).
+
 * Updated dependencies, tested with WordPress 5.9.
 
 = 0.1.2 =
