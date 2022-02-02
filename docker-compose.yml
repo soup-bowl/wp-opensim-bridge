@@ -1,8 +1,7 @@
 version: '3.6'
 services:
   db:
-    image: mariadb:latest
-    command: ['mysqld', '--character-set-server=utf8mb3', '--collation-server=utf8mb3_general_ci']
+    image: mariadb:10.5
     environment:
       MYSQL_DATABASE: metaverse
       MYSQL_ROOT_PASSWORD: password
