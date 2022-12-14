@@ -9,10 +9,10 @@
  * @wordpress-plugin
  * Plugin Name:       OpenSimulator Bridge
  * Description:       Bridges the user management from WordPress into OpenSimulator.
- * Plugin URI:        https://www.soupbowl.io/wordpress-opensim-bridge
+ * Plugin URI:        https://github.com/soup-bowl/wp-opensim-bridge
  * Version:           0.1.4
  * Author:            soup-bowl
- * Author URI:        https://www.soupbowl.io
+ * Author URI:        https://soupbowl.dev
  * License:           MIT
  * Text Domain:       wposbridge
  */
