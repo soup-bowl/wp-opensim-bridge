@@ -18,12 +18,15 @@ services:
   metaverse:
     depends_on:
     - db
-    build: ./.docker
+    image: soupbowl/opensimulator:latest
     ports:
     - "8002:9000"
     - "8002:9000/udp"
     - "9000:9000"
     - "9000:9000/udp"
+    volumes:
+    - "./docker/OpenSim.ini:/opt/opensim/bin/OpenSim.ini"
+    - "./docker/StandaloneCommon.ini:/opt/opensim/bin/config-include/StandaloneCommon.ini"
   www:
     depends_on:
     - db
