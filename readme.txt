@@ -10,7 +10,7 @@ License: MIT
 Manage OpenSimulator grid users via the WordPress user management system.
 
 == Description ==
-**This plugin is in early days, so you may experience bugs. Please bear with us and report any bugs you come across**
+**This plugin is in early days so you may experience bugs. Please bear with us and report any bugs you come across**
 
 Manage an individual [OpenSimulator](http://opensimulator.org) grid through your WordPress system by making use of the xmlrpc [Remote Admin](http://opensimulator.org/wiki/RemoteAdmin) interface. Once hooked up, this plugin will link up your WordPress users with their OpenSimulator counterparts, providing a simple user management interface.
 
